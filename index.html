@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3D Toy Shop</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: white;
+        color: black;
+    }
+
+    header {
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        border-bottom: 2px solid black;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .item {
+        border: 1px solid black;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .item img {
+        width: 100%;
+        border: 1px solid black;
+    }
+
+    button {
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid black;
+        background: black;
+        color: white;
+        cursor: pointer;
+    }
+
+    #cart {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 280px;
+        height: 100%;
+        background: #fff;
+        border-left: 2px solid black;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+
+    #cart h2 {
+        margin-top: 0;
+    }
+
+    .cart-item {
+        border-bottom: 1px solid black;
+        padding: 10px 0;
+    }
+
+    #total {
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    #checkout {
+        margin-top: 20px;
+        width: 100%;
+        padding: 12px;
+        background: black;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<header>School 3D Toy Shop</header>
+
+<div class="container">
+
+    <!-- PRODUCT 1 -->
+    <div class="item">
+        <img src="photo1.jpg" alt="Toy">
+        <h3>Toy 1</h3>
+        <p>Price: <span class="price">10</span>₾</p>
+        <button onclick="addToCart('Toy 1', 10)">Add to Cart</button>
+    </div>
+
+    <!-- PRODUCT 2 -->
+    <div class="item">
+        <img src="photo2.jpg" alt="Toy">
+        <h3>Toy 2</h3>
+        <p>Price: <span class="price">12</span>₾</p>
+        <button onclick="addToCart('Toy 2', 12)">Add to Cart</button>
+    </div>
+
+    <!-- PRODUCT 3 -->
+    <div class="item">
+        <img src="photo3.jpg" alt="Toy">
+        <h3>Toy 3</h3>
+        <p>Price: <span class="price">8</span>₾</p>
+        <button onclick="addToCart('Toy 3', 😎">Add to Cart</button>
+    </div>
+
+</div>
+
+<div id="cart">
+    <h2>Cart</h2>
+    <div id="cart-items"></div>
+    <p id="total">Total: 0₾</p>
+    <button id="checkout" onclick="checkout()">Checkout</button>
+</div>
+
+<script>
+let total = 0;
+
+function addToCart(name, price) {
+    const cartItems = document.getElementById("cart-items");
+
+    const div = document.createElement("div");
+    div.className = "cart-item";
+    div.innerHTML = ${name} — ${price}₾;
+
+    cartItems.appendChild(div);
+
+    total += price;
+    document.getElementById("total").innerText = "Total: " + total + "₾";
+}
+
+function checkout() {
+    // YOU WILL PUT YOUR GOOGLE FORM LINK HERE
+    window.location.href = "https://forms.gle/your-form-link";
+}
+</script>
+
+</body>
+</html>
