@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Submit Your Model</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">3D Model Project</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h2>Submit Your Model</h2>
+    <p class="muted">Send us a short message and up to 3 images of your model. We accept common image formats (jpg, png).</p>
+
+    <!--
+      To send submissions to your email you have two simple options:
+      1) Use Formspree (no server required): set the `action` to your Formspree endpoint (https://formspree.io/f/yourid)
+         and keep method="post" and enctype="multipart/form-data". Formspree will email submissions to the address you configure.
+      2) Self-host the included Node server: set `action` to /submit and run the server in this repo (see README for setup).
+    -->
+
+    <form id="submit-form" action="/submit" method="post" enctype="multipart/form-data">
+      <label class="label">Your Name
+        <input type="text" name="name" placeholder="Full name" required>
+      </label>
+
+      <label class="label">Email
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </label>
+
+      <label class="label">Message
+        <textarea name="message" rows="6" placeholder="Tell us about your model (format, polycount, license, etc.)"></textarea>
+      </label>
+
+      <label class="label">Images (up to 3)
+        <div class="files-row">
+          <input type="file" name="images" accept="image/*">
+          <input type="file" name="images" accept="image/*">
+          <input type="file" name="images" accept="image/*">
+        </div>
+      </label>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Send Submission</button>
+        <a class="btn btn-outline" href="index.html">Back to Home</a>
+      </div>
+    </form>
+
+    <p class="muted small">Note: Uploaded files are forwarded as attachments when configured. See README for setup instructions to deliver submissions to your email.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year2"></span> 3D Model Project</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
