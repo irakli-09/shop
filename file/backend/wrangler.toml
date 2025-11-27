@@ -1,0 +1,7 @@
+name = "three-d-model-backend"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ADMIN_ENCRYPTED_YWID = "oYtp5dEfmb-LxVx_WfEBRXZ8PpHOQ-4DaZfX8HNSPaeK8aa2LxIUIarjjxXShTdfeh68TA"
